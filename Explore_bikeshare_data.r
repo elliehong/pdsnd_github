@@ -38,7 +38,7 @@ chi$Start.Time.Hour <- fn.hour(chi$Start.Time)
 
 ## Creating plots for NYC
 #Calling ggplot library
-library(ggplot2)        
+library(ggplot2)
 # Creating plot showing how many travels happened for each month of year
 ggplot(data=ny, aes(ny$Start.Time.Month))+
         geom_bar(stat="count", color='black',fill='palevioletred')+
@@ -52,7 +52,7 @@ ggplot(data=ny, aes(ny$Start.Time.Hour))+
         geom_bar(stat="count", color='black',fill='tomato')+
         labs(x="Hour of Day", y="Counts", title="Counts for each hour of day - NYC")
 
-## Creating plots for Washington       
+## Creating plots for Washington
 # Creating plot showing how many travels happened for each month of year
 ggplot(data=wash, aes(wash$Start.Time.Month))+
         geom_bar(stat="count", color='black',fill='palevioletred1')+
@@ -66,7 +66,7 @@ ggplot(data=wash, aes(wash$Start.Time.Hour))+
         geom_bar(stat="count", color='black',fill='tomato1')+
         labs(x="Hour of Day", y="Counts", title="Counts for each hour of day - Washington")
 
-## Creating plots for Chicago      
+## Creating plots for Chicago
 # Creating plot showing how many travels happened for each month of year
 ggplot(data=chi, aes(chi$Start.Time.Month))+
         geom_bar(stat="count", color='black',fill='palevioletred4')+
@@ -80,14 +80,10 @@ ggplot(data=chi, aes(chi$Start.Time.Hour))+
         geom_bar(stat="count", color='black',fill='tomato4')+
         labs(x="Hour of Day", y="Counts", title="Counts for each hour of day - Chicago")
 
-## Getting an idea how trip duration (per hour) looks like for each cities using 'summary'
-summary(ny$Trip.Duration/60)
-summary(wash$Trip.Duration/60)
-summary(chi$Trip.Duration/60)
 # Creating subset for New York and Washington which contain NA values in trip duration
 ny.td <- subset(ny, !is.na(Trip.Duration))
 wash.td <- subset(wash, !is.na(Trip.Duration))
-# Getting total travel time info for each city 
+# Getting total travel time info for each city
 sum(ny.td$Trip.Duration/3600)
 sum(wash.td$Trip.Duration/3600)
 sum(chi$Trip.Duration/3600)
@@ -118,7 +114,7 @@ wash.travel <- cbind(city2, travel2)
 colnames(wash.travel) <- c("city", "travel.duration")
 chi.travel <- cbind(city3, travel3)
 colnames(chi.travel) <- c("city", "travel.duration")
-# Combining all 3 cities' city name - travel tables into one data table 
+# Combining all 3 cities' city name - travel tables into one data table
 three.travel <- rbind(ny.travel, wash.travel, chi.travel)
 
 ## Visualization for average travel time data using boxplot
