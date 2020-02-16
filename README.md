@@ -9,6 +9,7 @@ Share bikeshare project work (from R course) on GitHub and get used to Git comma
 
 ### Files used
 explore bikeshare_data.r
+(this file is generated from udacity R course project)
 
 ### Credits
 udacity
