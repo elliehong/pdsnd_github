@@ -83,10 +83,6 @@ ggplot(data=chi, aes(chi$Start.Time.Hour))+
 # Creating subset for New York and Washington which contain NA values in trip duration
 ny.td <- subset(ny, !is.na(Trip.Duration))
 wash.td <- subset(wash, !is.na(Trip.Duration))
-# Getting total travel time info for each city
-sum(ny.td$Trip.Duration/3600)
-sum(wash.td$Trip.Duration/3600)
-sum(chi$Trip.Duration/3600)
 
 ## Visualization for total travel time data
 # Creating data table (array) to store total travel time (hr) info for each city
