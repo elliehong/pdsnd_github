@@ -3,6 +3,7 @@ ny = read.csv('new_york_city.csv')
 wash = read.csv('washington.csv')
 chi = read.csv('chicago.csv')
 
+# Check the first 5-6 rows for each dataset
 head(ny)
 
 head(wash)
